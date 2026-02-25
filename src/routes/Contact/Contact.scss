@@ -1,0 +1,107 @@
+@use "../../responsive.scss" as *;
+
+.contactPage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #444;
+  }
+
+  p {
+    color: #666;
+    font-size: 16px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .inputGroup {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        resize: none;
+
+        &:focus {
+          outline: none;
+          border-color: #fece51;
+        }
+      }
+
+      textarea {
+        min-height: 120px;
+      }
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #fece51;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      width: max-content;
+
+      &:hover {
+        background-color: #fddc6c;
+      }
+    }
+  }
+
+  .contactInfo {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    div {
+      flex: 1;
+      min-width: 200px;
+
+      h3 {
+        color: #444;
+        margin-bottom: 5px;
+      }
+
+      p {
+        color: #666;
+      }
+    }
+  }
+
+  @include md {
+    padding: 20px 10px;
+    .contactInfo {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+@use "../../responsive.scss" as *;
+
+.newPostPage {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+
+  height: 100%;
+
+  /* ========================= */
+  /* FORM CONTAINER */
+  /* ========================= */
+  .formContainer {
+    flex: 3;
+    overflow: auto;
+
+    .wrapper {
+      margin: 30px 50px 100px 0;
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 30%;
+
+          label {
+            font-weight: 500;
+          }
+
+          input {
+            padding: 15px 18px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 14px;
+
+            @include sm {
+              padding: 12px 14px;
+              font-size: 13px;
+            }
+          }
+
+          select {
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+
+            @include sm {
+              padding: 12px;
+              font-size: 13px;
+            }
+          }
+
+          &.description {
+            width: 100%;
+            height: 320px;
+
+            .quill,
+            .ql-container {
+              height: 200px;
+              font-size: 16px;
+
+              @include sm {
+                height: 150px;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        .sendButton {
+          width: 30%;
+          border-radius: 5px;
+          border: none;
+          background-color: teal;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          padding: 12px 0;
+          font-size: 16px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #006d6d;
+          }
+
+          @include md {
+            width: 45%;
+          }
+
+          @include sm {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  /* ========================= */
+  /* SIDE CONTAINER / IMAGES */
+  /* ========================= */
+  .sideContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    height: 100%;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include md {
+        max-width: 250px;
+      }
+
+      @include sm {
+        max-width: 200px;
+        height: 150px;
+      }
+    }
+  }
+
+  /* ========================= */
+  /* RESPONSIVE */
+  /* ========================= */
+  @include md {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+
+    .formContainer {
+      .wrapper {
+        margin: 20px 0 50px 0;
+
+        form {
+          .item {
+            width: 48%;
+          }
+
+          .sendButton {
+            width: 48%;
+          }
+        }
+      }
+    }
+
+    .sideContainer {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      img {
+        margin: 5px;
+      }
+    }
+  }
+
+  @include sm {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+
+    .formContainer {
+      .wrapper {
+        margin: 10px 0 30px 0;
+
+        form {
+          .item {
+            width: 100%;
+          }
+
+          .sendButton {
+            width: 100%;
+          }
+
+          .description {
+            height: 200px;
+          }
+        }
+      }
+    }
+
+    .sideContainer {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.simple-editor {
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border 0.2s ease;
+
+  &:focus-within {
+    border: 1px solid #999;
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e5e5e5;
+
+    button {
+      padding: 6px 10px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #eaeaea;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .editor-area {
+    min-height: 180px;
+    padding: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+    outline: none;
+    color: #333;
+
+    &:empty::before {
+      content: "Write description here...";
+      color: #aaa;
+      pointer-events: none;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+  }
+}

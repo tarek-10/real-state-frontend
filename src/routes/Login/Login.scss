@@ -1,0 +1,172 @@
+@use "../../responsive.scss" as *;
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  gap: 0;
+
+  @include sm {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: center;
+  }
+
+  /* ================= FORM CONTAINER ================= */
+  .formContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 400px;
+      background-color: #fff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: teal;
+        font-size: 2rem;
+
+        @include md {
+          font-size: 1.8rem;
+        }
+
+        @include sm {
+          font-size: 1.6rem;
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s;
+
+        &:focus {
+          border-color: teal;
+          box-shadow: 0 0 8px rgba(0, 128, 128, 0.3);
+          outline: none;
+        }
+
+        @include sm {
+          padding: 0.8rem 0.9rem;
+          font-size: 0.95rem;
+        }
+      }
+
+      button {
+        padding: 1rem;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(90deg, teal, #008080cc);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(1.03);
+          background: linear-gradient(90deg, #008080cc, teal);
+        }
+
+        &:disabled {
+          background-color: #bed9d8;
+          cursor: not-allowed;
+        }
+      }
+
+      a {
+        text-align: center;
+        font-size: 0.9rem;
+        color: teal;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .error {
+        color: red;
+        font-size: 0.85rem;
+        text-align: center;
+      }
+    }
+  }
+
+  /* ================= IMAGE CONTAINER ================= */
+  .imgContainer {
+    flex: 1;
+    background-color: #fcf5f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      max-width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include sm {
+        max-width: 100%;
+      }
+    }
+
+    @include sm {
+      margin-top: 2rem;
+    }
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @include sm {
+    .formContainer {
+      width: 100%;
+
+      form {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .imgContainer {
+      width: 100%;
+    }
+  }
+
+  @include md {
+    .formContainer form {
+      max-width: 90%;
+    }
+  }
+}
