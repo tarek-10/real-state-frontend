@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import "./Chat.scss";
-import { AuthContext } from "../../context/AuthContext.jsx";
+import { AuthContext } from "../../Context/AuthContext.jsx";
 import apiRequest from "../../lib/apiRequest.js";
 import { format } from "timeago.js";
 import { SocketContext } from "../../context/SocketContext.jsx";
