@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import "./newPostPage.scss";
+import "./NewPostPage.scss";
 
 import apiRequest from "../../lib/apiRequest";
-import UploadWidget from "../../components/uploadWidget/UploadWidget";
+import UploadWidget from "../../components/UploadWidget/UploadWidget";
 import { useNavigate } from "react-router-dom";
 import SimpleEditor from "../../components/SimpleDesc/SimpleEditor";
 import { AuthContext } from "../../Context/AuthContext";
