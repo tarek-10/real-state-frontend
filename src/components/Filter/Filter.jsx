@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./filter.scss";
+import "./Filter.scss";
 import { useSearchParams } from "react-router-dom";
 
 function Filter() {
