@@ -1,5 +1,5 @@
 import { useRef, useEffect, useCallback } from "react";
-import "./simpleEditor.scss";
+import "./SimpleEditor.scss";
 
 function SimpleEditor({ value, onChange }) {
   const editorRef = useRef(null);

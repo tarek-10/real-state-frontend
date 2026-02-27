@@ -1,4 +1,4 @@
-import "./list.scss";
+import "./List.scss";
 import Card from "../card/Card";
 
 function List({ posts }) {
