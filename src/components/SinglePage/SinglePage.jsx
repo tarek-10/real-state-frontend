@@ -1,4 +1,4 @@
-import "./singlePage.scss";
+import "./SinglePage.scss";
 import Map from "../Map/Map";
 import Slider from "../Slider/Slider";
 import { useLoaderData, useNavigate } from "react-router-dom";
